@@ -1,4 +1,4 @@
-def caeser_cipher_encrypt(plaintext):
+def encrypt(plaintext):
     ALPHABETIC = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
     SHIFT = 3
     MAX_LENGTH = 25
@@ -14,7 +14,7 @@ def caeser_cipher_encrypt(plaintext):
         ciphertext += ALPHABETIC[index];
     print plaintext, ' ---> ', ciphertext
 
-def caeser_cipher_decrypt(ciphertext):
+def decrypt(ciphertext):
     ALPHABETIC = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
     SHIFT = 3
     MIN_LENGTH = 0
@@ -32,5 +32,5 @@ def caeser_cipher_decrypt(ciphertext):
 
 
 
-caeser_cipher_encrypt('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
-caeser_cipher_decrypt('DEFGHIJKLMNOPQRSTUVWXYZABC')
+encrypt('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+decrypt('DEFGHIJKLMNOPQRSTUVWXYZABC')
