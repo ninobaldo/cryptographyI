@@ -6,13 +6,11 @@ def encrypt(plaintext):
     ciphertext = ''
     for i, letter in enumerate(plaintext):
         it = ALPHABETIC.index(letter);
-        index = it + SHIFT;
-
-        if index > MAX_LENGTH:
-            index = index - ALPHABETIC_LENGTH;
-
+        index = (it + SHIFT) % ALPHABETIC_LENGTH;
         ciphertext += ALPHABETIC[index];
+
     print plaintext, ' ---> ', ciphertext
+
 
 def decrypt(ciphertext):
     ALPHABETIC = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
@@ -22,14 +20,10 @@ def decrypt(ciphertext):
     plaintext = ''
     for i, letter in enumerate(ciphertext):
         it = ALPHABETIC.index(letter);
-        index = it - SHIFT;
-
-        if index < MIN_LENGTH:
-            index = index + ALPHABETIC_LENGTH;
+        index = (it - SHIFT) % ALPHABETIC_LENGTH;
 
         plaintext += ALPHABETIC[index];
     print ciphertext, ' ---> ', plaintext
-
 
 
 encrypt('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
